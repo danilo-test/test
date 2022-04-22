@@ -1,7 +1,7 @@
 name: Update PR Labels
 on:
-  pull_request_target:
-    types: [synchronize, submitted]
+  pull_request_review:
+    types: [submitted]
   pull_request:
     types: [synchronize]
 
@@ -11,6 +11,6 @@ jobs:
     name: Update PR Labels
     steps:
       - name: Update Labels
-        uses: danilo-delbusso/pr-review-labeller@v1.1.1
+        uses: danilo-delbusso/pr-review-labeller@v1.2.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
